@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library app</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="title">Library</div>
+        <button id="toggleTheme">🌙 Toggle Theme</button>
+    </div>
+    <div class="main">
+        <button class="add">+Add Book</button>
+        <div class="bookgrid"></div>
+    </div>
+    <div class="modal" id="addBookModal">
+        <div class="modal-content">
+        <div class="close-button">❌</div>
+        <div class="modal-title">Add New Book</div>
+        <form action="" method="" class="form">
+                <div class="container">
+                    <label for="BookTitle">
+                        <div class="text">Book Title:</div>
+                        <input type="text" placeholder="Enter Book Title:"  id="BookTitle"  pattern = ".*\S.*" required="required">
+                    </label>
+                </div>
+                <div class="container">
+                    <label for="Author">
+                        <div class="text">Author:</div>
+                        <input type="text" placeholder="Enter Author's Name:" id="Author" pattern="^[A-Z][a-zA-Z ]+$" required="required">
+                    </label>
+                </div>
+                <div class="container">
+                    <label for="pages">
+                        <div class="text">Pages:</div>
+                        <input type="number" placeholder="Enter no of pages of book:" id="pages" min="1" step="1" required="required">        
+                    </label>
+                </div>
+                <div class="container">
+                    <label for="checkbox">
+                        <div class="text">Read?</div>
+                        <input type="checkbox"  id="checkbox" value="yes">
+                    </label>
+                </div>
+                <div class="btn">
+                    <button class="submit-btn" type="submit">Create New Book</button>
+                </div> 
+            </form>
+        </div>
+    </div>
 
+    <div class = "footer">
+        <div class = "copyright">
+            <div class = "copytext">
+                Copyright<span> &#169 </span>Prakhar_Shah <script>document.write(new Date().getFullYear());</script> @
+            </div>
+            <div class = "github">
+                <a href="https://github.com/prs-016/library-app#" target="_blank" rel="noopener">
+                    <img src="./images/github.png" , alt="github">
+                </a>
+            </div>
+        </div>
+    </div>
+    <audio id="gamemusic" loop autoplay>
+        <source src="./audio/soft-piano-music-312509.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+    </audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('gamemusic').play();
+        }, { once: true });
+
+        document.addEventListener("visibilitychange", () =>
+        {
+            if (document.hidden) 
+            {
+                gamemusic.pause();}
+            else 
+            {
+                gamemusic.play();
+            }
+        });
+    </script>
+
+<script src = "./script.js"></script>
+</body>
+</html>
