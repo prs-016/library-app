@@ -102,6 +102,7 @@ const form2=document.querySelector(".form");
 const container = document.querySelector(".container");
 const button2 = document.querySelector(".btn");
 const copytext = document.querySelector(".copytext");
+const icon = document.getElementById("icon");
 let counter=0;
 theme.addEventListener("click", ()=>{
     theme.classList.toggle("dark");
@@ -118,10 +119,12 @@ theme.addEventListener("click", ()=>{
     if((counter++) %2 ==0)
     {
         theme.textContent="☀️ Light Mode";
+        icon.href = "./images/icon-dark.svg";
     }
     else
     {
         theme.textContent="🌙 Dark Mode";
+        icon.href = "./images/books-svgrepo-com.svg";
     }
 });
 // next time just do body.dark .header ..... this is overkill
