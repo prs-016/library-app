@@ -21,6 +21,7 @@ function addBook(title, author, pages, read){
         card.innerHTML = `
             <h2>${book.title}</h2>
             <input type="checkbox" class = "check" ${book.read?"checked":""}>
+            <button class = "closer">❌</button>
             <p><strong>Author:</strong> ${book.author}</p>
             <p><strong>Pages:</strong> ${book.pages}</p>
             <p class = "status"><strong>Status:</strong> ${book.read ? "✅ Read" : "❌ Not read yet"}</p>
@@ -41,6 +42,16 @@ function addBook(title, author, pages, read){
             }
             else{
                 card.classList.remove("active");
+            }
+        });
+
+        const closer =card.querySelector(".closer");
+        closer.addEventListener("click", ()=>{
+            card.remove();
+            const index = MyLibrary.indexOf(book);
+            if (index > -1) 
+            {
+                MyLibrary.splice(index, 1); 
             }
         });
 
