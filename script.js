@@ -1,5 +1,4 @@
 const MyLibrary=[];
-let counter=0;
 const grid = document.querySelector(".bookgrid")
 function Book(title, author, pages, read){
     if(!new.target){
@@ -92,3 +91,37 @@ if (form) {
 }
 
 
+const theme = document.querySelector("#toggleTheme");
+const body = document.querySelector("body");
+const header = document.querySelector(".header");
+const button1 = document.querySelector(".header button");
+const add = document.querySelector(".main .add");
+const modal2 = document.querySelector(".modal");
+const closebutton=document.querySelector(".close-button");
+const form2=document.querySelector(".form");
+const container = document.querySelector(".container");
+const button2 = document.querySelector(".btn");
+const copytext = document.querySelector(".copytext");
+let counter=0;
+theme.addEventListener("click", ()=>{
+    theme.classList.toggle("dark");
+    body.classList.toggle("dark");
+    header.classList.toggle("dark");
+    button1.classList.toggle("dark");
+    add.classList.toggle("dark");
+    modal2.classList.toggle("dark");
+    closebutton.classList.toggle("dark");
+    form2.classList.toggle("dark");
+    container.classList.toggle("dark");
+    button2.classList.toggle("dark");
+    copytext.classList.toggle("dark");
+    if((counter++) %2 ==0)
+    {
+        theme.textContent="☀️ Light Mode";
+    }
+    else
+    {
+        theme.textContent="🌙 Dark Mode";
+    }
+});
+// next time just do body.dark .header ..... this is overkill

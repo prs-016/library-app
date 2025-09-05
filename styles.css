@@ -25,13 +25,19 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
   display: grid;
   grid-template-rows: 0.25fr 3fr 0.25fr;
   height: 100vh;
   overflow: auto;
   background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
   transition: background 0.5s ease, color 0.3s ease;
+  transition: color 2s ease, box-shadow 0.3s ease;
+}
+
+
+body.dark{
+    background: linear-gradient(120deg, #000000, #646464);
 }
 
 .header {
@@ -44,6 +50,13 @@ body {
   align-items: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   margin: 1rem;
+  transition: color 2s ease, box-shadow 0.3s ease;
+}
+
+.header.dark{
+    background: rgba(255, 255, 255, 0.2);
+    color: #a2a2a2;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
 .header .title{
@@ -67,7 +80,12 @@ body {
     box-shadow: 0 4px 16px rgba(0,0,0,0.18); 
     font-family: walt;
     cursor: pointer;
-    transition: color 2s ease, transform 0.5s ease, cursor 0.2s ease,box-shadow 0.3s;
+    transition: color 2s ease, transform 0.5s ease, cursor 0.2s ease,box-shadow 0.3s ease;
+}
+
+.header.dark #toggleTheme{
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.18); 
+    color: white;
 }
 
 .header button:hover {
@@ -99,7 +117,12 @@ body {
     margin-bottom: 5vh;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18); 
     cursor: pointer;
-    transition: color 2s ease, transform 0.5s ease, cursor 0.2s ease,box-shadow 0.3s;
+    transition: color 2s ease, transform 0.5s ease, cursor 0.2s ease,box-shadow 0.3s ease;
+}
+
+.main .add.dark{
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.18); 
+    color: white;
 }
 
 .main button:hover {
@@ -125,6 +148,11 @@ body {
   height: 100%; 
   overflow: hidden; 
   background-color: rgba(0,0,0,0.4); 
+  transition: background-color 2s ease; 
+}
+
+.modal.dark{
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .modal-title{
@@ -149,6 +177,11 @@ body {
   top: 10px;
   right: 15px;
   transition: transform 1s ease-in;
+  transition: color 2s ease, box-shadow 0.3s ease;
+}
+
+.close-button.dark{
+    color: rgb(82, 81, 81);
 }
 
 .close-button:hover,
@@ -169,6 +202,18 @@ form{
     0 5px 5px -2px rgba(0,0,0,0.5),   /* bottom */
     0 -5px 5px -2px rgba(0,0,0,0.5);
     width: 60vh;
+}
+
+.form{
+    transition: color 2s ease, box-shadow 0.3s ease;
+}
+
+.form.dark{
+    box-shadow: 
+    5px 0 5px -2px rgba(255, 255, 255, 0.5),   /* right */
+   -5px 0 5px -2px rgba(255, 255, 255, 0.5),   /* left */
+    0 5px 5px -2px rgba(255, 255, 255, 0.5),   /* bottom */
+    0 -5px 5px -2px rgba(255, 255, 255, 0.5);
 }
 
 .container input{
@@ -199,6 +244,11 @@ form{
   font-style: italic;                    /* optional */
 }
 
+.container.dark input::placeholder
+{
+    color: #fffefe; 
+}
+
 .text{
     text-align: center;
     font-family: blackflag;
@@ -218,7 +268,14 @@ form{
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.18); 
     font-family: cubic;
     cursor: pointer;
-    transition: color 2s ease, transform 2s ease, cursor 0.2s ease,box-shadow 1.2s;
+    transition: color 2s ease, transform 2s ease, cursor 0.2s ease,box-shadow 1.2s ease;
+}
+
+.btn.dark button{
+    background: rgba(255, 255, 255, 0.618);
+    color: rgb(0, 0, 0);
+    border: 0;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.18); 
 }
 
 button:hover {
@@ -294,6 +351,11 @@ button:active{
     color:black;
     font-family: walt;
     font-size: 1.25rem;
+    transition: color 2s ease;
+}
+
+.copytext.dark{
+    color: white;
 }
 
 .github{
